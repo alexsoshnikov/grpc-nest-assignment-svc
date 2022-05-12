@@ -2,17 +2,17 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { OrderModule } from './order/order.module';
+import { AssignmentModule } from './assignments/assignment.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'micro_order',
+      database: 'micro_assignment',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    OrderModule,
+    AssignmentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
